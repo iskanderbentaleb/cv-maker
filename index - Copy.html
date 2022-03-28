@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registraion Form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.2.0/jspdf.umd.min.js"></script>
+
+  </head>
+  
+  <body>
+
+ <!-- form here contain all the cv -->
+<form id="all">
+
+<div id="CV" class="cv">
+  <!-- left side in cv -->
+  <div class="leftDiv">
+    <center>
+      <h1>Skills</h1>
+      <div class="Skill_one">
+      <h3 class="Title_Skill_1"></h3>
+      <progress value="0" class="skill_1" max="100"></progress>
+      </div>
+      <div class="Skill_two">
+        <h3 class="Title_Skill_2"></h3>
+        <progress value="50" class="skill_2" max="100"></progress>
+        </div>
+        <div class="Skill_three">
+          <h3 class="Title_Skill_3"></h3>
+          <progress value="50" class="skill_3" max="100"></progress>
+          </div>
+          <div class="Skill_four">
+            <h3 class="Title_Skill_4"></h3>
+            <progress value="50" class="skill_4" max="100"></progress>
+            </div>
+            <div class="Skill_five">
+              <h3 class="Title_Skill_5"></h3>
+              <progress value="50" class="skill_5" max="100"></progress>
+              </div>
+              <div class="Skill_six">
+                <h3 class="Title_Skill_6"></h3>
+                <progress value="50" class="skill_6" max="100"></progress>
+                </div>
+                <h3>Adress</h3>
+        <div class="Aff_adress">89 Log Alger Alger</div>
+    </center>
+  </div>
+  <!-- left side in cv -->
+
+  <!-- center div in cv  -->
+  <div class="centerdiv">
+      <center><img class="profile" id="profile_pic" src="me.jpg" alt="">
+      <div class="Aff_JobName" >Web Devloper</div>
+      <div class="Aff_lastname">Bentaleb</div>
+      <p class="Aff_name">Iskander</p>
+        <p class="Aff_birthday">04/29/2003</p>
+        <h2>Phone</h2>
+        <p class="Aff_number">0770350112</p>
+      </center>
+  </div>
+  <!-- center div in cv  -->
+
+
+    <!-- right div in cv  -->
+  <div class="rightDiv">
+    <center>
+      <h1 class="h1_abt_ME">About Me</h1>
+      <div class="Div_abt_ME">
+      <p class="Aff_aboutMe"></p>
+      </div>
+      <h1 class="h1_education">Education</h1>
+      <div class="div_education"> 
+      <div class="Div_eduction_1">
+        <div class="Aff_Eudi_1"></div>
+        <div class="Aff_Eudi_2" ></div>
+        </div>
+      
+        <div class="Div_eduction_2">
+          <div type="text" class="Aff_Eudi_3"></div>
+          <div type="text" class="Aff_Eudi_4" ></div>
+          </div>
+        </div>
+        <h3>Email</h3>
+        <div class="Aff_Email"></div>
+      
+    </center>
+  </div>	
+    <!-- right div in cv  -->
+
+
+</div>
+
+<!-- div contain 2 button download and prev -->
+<div id="final_button">
+<button id="prev">Previous</button>
+<button id="cmd" onclick="download_cv()">Download</button>
+</div>
+<!-- div contain 2 button download and prev -->
+
+
+
+</form>
+ <!-- form here contain all the cv -->
+
+
+ <!-- form here contain all the input -->
+<form action="#" class="form">
+      <h1 class="text-center">Cv Maker</h1>
+      <div class="progressbar">
+        <div class="progress" id="progress"></div>
+        
+        <div
+          class="progress-step progress-step-active"
+          data-title="Intro"
+        ></div>
+        <div class="progress-step" data-title="Contact"></div>
+        <div class="progress-step" data-title="About"></div>
+        <div class="progress-step" data-title="Capacitys"></div>
+      </div>
+
+      
+      <div class="form-step form-step-active">
+        <div class="input-group">
+        <label for="username">Your Picture</label>
+        <input type="file" onchange="readURL(this);" accept="image/*" class="custom-file-input" id="profile_image">
+        <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02"></label>
+        </div>
+
+        <div class="input-group">
+          <label for="username">name</label>
+          <input type="text" name="username"  class="name" />
+        </div>
+
+        <div class="input-group">
+          <label for="position">lastname</label>
+          <input type="text" name="position" class="lastname" />
+        </div>
+
+        <div class="input-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" name="dob" class="D_birth" />
+        </div>
+        
+
+        <div class="">
+          <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
+        </div>
+      </div>
+      <div class="form-step">
+        <div class="input-group">
+          <label for="phone" >Phone</label>
+          <input type="text" class="phone" name="phone"/>
+        </div>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="text" name="email" class="email" id="email" />
+        </div>
+        
+        <div class="input-group">
+          <label for="phone">Home adress</label>
+          <input type="text" name="Adress" class="adress" id="name" />
+        </div>
+
+        <div class="btns-group">
+          <a href="#" class="btn btn-prev">Previous</a>
+          <a href="#" class="btn btn-next">Next</a>
+        </div>
+      </div>
+      <div class="form-step">
+        <div class="input-group">
+          <label for="ID">Your Title Job</label>
+          <input type="text" class="job" name="work" id="ID" />
+        </div>
+        <div class="input-group">
+          <label for="ID">About You</label>
+          <input type="text" class="aboutMe" name="work" id="ID" />
+        </div>
+        <div class="input-group">
+          <label for="ID">Education</label>
+          <div class="ipt_eduction_1">
+            <input  type="text" class="Eudi_1"/>
+            <input type="text" class="Eudi_2" >
+            </div>
+          
+            <div class="ipt_eduction_2">
+              <input type="text" class="Eudi_3"/>
+              <input type="text" class="Eudi_4"  >
+              </div>
+        </div>
+
+        <div class="btns-group">
+          <a href="#" class="btn btn-prev">Previous</a>
+          <a href="#" class="btn btn-next">Next</a>
+        </div>
+      </div>
+      <div class="form-step">
+        <div class="input-group">
+          <label for="dob">Capacity</label>
+
+          <div class="skl1">
+          <input type="text" class="skil_1" name="Adress" id="experiance" placeholder="English"/>
+          <input type="number" class="skill1" placeholder="70%">
+          </div>
+
+          <div class="skl2">
+              <input type="text" class="skil_2" name="Adress" id="experiance" placeholder="French"/>
+              <input type="number"class="skill2" placeholder="80%">
+            </div>
+
+          <div class="skl3">
+              <input type="text" class="skil_3" name="Adress" id="experiance" placeholder="photoshop"/>
+              <input type="number" class="skill3" placeholder="90%">
+          </div>
+          <div class="skl4">
+              <input type="text" class="skil_4" name="Adress" id="experiance" placeholder="html"/>
+              <input type="number" class="skill4" placeholder="90%">
+          </div>
+          <div class="skl5">
+              <input type="text" class="skil_5" name="Adress" id="experiance" placeholder="css"/>
+              <input type="number" class="skill5" placeholder="80%">
+          </div>
+          <div class="skl6">
+              <input type="text" class="skil_6" name="Adress" id="experiance" placeholder="Javascript"/>
+              <input type="number" class="skill6" placeholder="75%">
+          </div>
+          
+
+        </div>
+        <div class="btns-group">
+          <a href="#" class="btn btn-prev">Previous</a>
+          <a href="#" class="btn btn-create">create</a>
+        </div>
+      </div>
+</form>
+ <!-- form here contain all the input -->
+
+
+<!-- the blue progess after clicking create -->
+<progress class="pro_gress" value="0" max="100"></progress>  
+<!-- the blue progess after clicking create -->
+
+
+
+
+
+<script src="script.js"></script>
+
+
+
+  </body>
+</html>

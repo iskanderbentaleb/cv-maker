@@ -1,0 +1,430 @@
+:root {
+    --primary-color: rgb(11, 78, 179);
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #17202A;
+    color: white;
+    font-family: 'Red Hat Mono', monospace;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+  }
+  /* Global Stylings */
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+  }
+  
+  .Eudi_1,.Eudi_3{
+    width: 50%;
+  }
+  .Eudi_2,.Eudi_4{
+    width: 50%; 
+    margin-left: 20px;
+  }
+  
+  .ipt_eduction_1{
+    display: flex; 
+    flex-direction: row;
+  }
+  .ipt_eduction_2{
+    display: flex; 
+    flex-direction: row; 
+    margin-top: 10px;
+  }
+  
+  
+  .width-50 {
+    width: 50%;
+  }
+  
+  .ml-auto {
+    margin-left: auto;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Progressbar */
+  .progressbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+    margin: 2rem 0 4rem;
+  }
+  
+  .progressbar::before,
+  .progress {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #dcdcdc;
+    z-index: -1;
+  }
+  
+  .progress {
+    background-color: var(--primary-color);
+    box-shadow: 1px 1px 1px 1px rgb(0, 136, 255);
+    width: 0%;
+    transition: 0.6s;
+  }
+  
+  .progress-step {
+    width: 2.1875rem;
+    height: 2.1875rem;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .progress-step::before {
+    counter-increment: step;
+    content: counter(step);
+  }
+  
+  .progress-step::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: 0.85rem;
+    color: #666;
+  }
+  
+  .progress-step-active {
+    background-color: var(--primary-color);
+    color: #f3f3f3;
+  }
+  
+  /* Form */
+  .form {
+    box-shadow: 0.1px 2px 4px 2.5px rgb(0, 136, 255);
+    width: clamp(320px, 30%, 430px);
+    margin: 0 auto;
+    border-radius: 0.35rem;
+    padding: 1.5rem;
+    transition: all 1s ease-in;
+  }
+  
+  .form-step {
+    display: none;
+    transform-origin: top;
+    animation: animate 0.5s;
+  }
+  
+  .form-step-active {
+    display: block;
+  }
+  
+  .input-group {
+    margin: 2rem 0;
+  }
+  
+  @keyframes animate {
+    from {
+      transform: scale(1, 0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+  }
+  
+  /* Button */
+  .btns-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .btn {
+    padding: 0.75rem;
+    display: block;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: #f3f3f3;
+    text-align: center;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .btn:hover {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgb(0, 136, 255);
+  }
+  
+  
+  /* start the cv */
+  
+  #all {
+    display: none;
+    opacity: 0;
+    transition: all 2s ease-in;
+  }
+  
+  
+  .cv{
+    width: 1100px; 
+    height: 600px; 
+    background-color: #f3f3f3;
+    display: flex;
+  }
+  /* start the cv */
+  
+  
+  /* left DIV style */
+  .leftDiv
+      {
+          background-color: #679181;
+          color: #000;
+          height: 100%;
+          width: 33%;
+  }
+  .skill_1,.skill_2,.skill_3,.skill_4,.skill_5,.skill_6{
+    width: 85%; 
+    height: 25px; 
+    accent-color: rgb(0, 0, 0); 
+    margin-top:-50px;
+  } 
+  .leftDiv h1{
+    color: #17202A;
+    background-color: #fff; 
+    width: 80%; 
+    border-radius: 5px;
+  }
+  .leftDiv h3 {
+    color: #ffffff;
+  }
+  .Aff_adress{
+    width: 90%; 
+    margin-top: -20px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+  }
+  
+  .skil_1,.skil_2,.skil_3,.skil_4,.skil_5,.skil_6{
+    width: 80%;
+  }
+  .skill1,.skill2,.skill3,.skill4,.skill5,.skill6{
+    width: 20%;
+  }
+  .skl1,.skl2,.skl3,.skl4,.skl5,.skl6{
+    display: flex; 
+    flex-direction: row;
+    margin-top: 5px;
+  }
+  /* left DIV style */
+  
+  
+  
+  
+  /* center div Style */
+    .centerdiv{
+      background-color: #ffffffc9;
+      height: 100%;
+          width: 34%;
+    }
+  
+    .profile{
+    width: 200px; 
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 15px;
+    border: #17202A solid 4px;
+  }
+  .Aff_JobName{
+    color: #000; 
+    font-size: 30px;
+    margin: 20px;
+    text-align: center; 
+    font-weight: bold;
+    width: 80%; 
+    background-color: #ccc;
+  }
+  .Aff_lastname{
+    color: #000;
+    font-size: 27px;
+    font-weight: bold;
+  }
+  .Aff_name{
+    color: #000;
+    font-size: 27px;
+    font-weight: bold;  
+    margin-top: 5px;
+  }
+  .Aff_birthday{
+    color: #000; 
+    font-size: 27px; 
+    font-weight: bold; 
+    margin-top: 50px;
+  }
+  .centerdiv > h2 {
+    color: #000; 
+    margin-top: 50px;
+  }
+  .Aff_number{
+    color: #000;  
+    margin-top: -25px; 
+    font-size: 30px; 
+    font-weight: bold;
+  }
+  
+  /* center div Style */
+  
+  
+  
+  /* right div style in Cv */
+      .rightDiv{
+          background-color: #e78a8a;
+          color: rgb(255, 255, 255);
+          height: 100%;
+          width: 33%;
+      }
+    .h1_abt_ME {
+      color: #17202A; 
+      background-color: #fff;
+      width: 80%;
+      border-radius: 5PX;
+    }
+    .Div_abt_ME{
+      width: 80%; 
+      border-radius: 5px ;
+      height:300px; 
+      background-color: #fff; 
+      color: #000; 
+      margin-top: -18px; 
+      font-size: 15px;
+    }
+    .Aff_aboutMe{
+      margin: 3px; 
+    }
+    .h1_education{
+      color: #17202A;
+      background-color: #fff;
+      width: 70%;
+      border-radius: 5px;
+    }
+    .div_education {
+      margin:10px; 
+      color: #000;
+      font-size: 18px;
+    }
+    .Div_eduction_1{
+      display: flex; 
+      flex-direction: row; 
+    }
+    .Div_eduction_2{
+      display: flex; 
+      flex-direction: row; 
+      margin-top: 20px;
+    }
+    .Aff_Eudi_1{
+      width: 50%; 
+      margin:5px; 
+      height: 100%; 
+      background-color: #ffffff; 
+      margin-top: 15px;
+    }
+    .Aff_Eudi_2{
+      width: 50%; 
+      margin:5px; 
+      margin-left: 20px; 
+      height: 100%; 
+      background-color: #ffffff;
+    }
+    .Aff_Eudi_3{
+      width: 50%; 
+      margin:5px; 
+      height: 100%; 
+      background-color: #ffffff;
+    }
+    .Aff_Eudi_4{
+      width: 50%; 
+      margin:5px; 
+      margin-left: 20px; 
+      height: 100%; 
+      background-color: #ffffff; 
+      margin-top: -15px;
+    }
+    .rightDiv>h3{
+      color: #17202A;
+    }
+    .Aff_Email{
+      width: 90%;
+      margin-top: -20px; 
+      background-color: rgb(255, 255, 255); 
+      color: black;
+    }
+  
+  /* right div style CV */
+  
+  
+  
+  /* 2 last button dowload and prev */
+  
+  #final_button{
+    display: flex;
+  }
+  
+  #cmd {
+    padding: 0.75rem;
+    font-size: 15px;
+    display: block;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: #f3f3f3;
+    text-align: center;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: 0.3s;
+  }
+  #cmd:hover {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgb(0, 136, 255);
+  }
+  #prev {
+    padding: 0.75rem;
+    font-size: 15px;
+    display: block;
+    text-decoration: none;
+    background-color: rgb(184, 242, 97);
+    color: #000000;
+    text-align: center;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  #prev:hover {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgb(136, 255, 0);
+  }
+  /* 2 last button dowload and prev */
+  
+  /* progress */
+  .pro_gress{
+    display: none;
+    transition: all 1s ease-in;
+    opacity: 0;
+  }
+  
+  
